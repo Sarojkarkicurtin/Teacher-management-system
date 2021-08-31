@@ -119,10 +119,9 @@
                 <div class="container">
                     <div>
 
+                       <div class="form-row" style="padding-top:50px" data-bind="with: MyAddress">
 
-                        <div class="form-row" style="padding-top:50px" data-bind="with: MyAddress">
-
-                            <div class=" col-md-4">
+                            <div class=" col-md-3">
                                 <label for="AddressType">Address Type</label>
 
                                 <select class="form-control" data-bind="value: AddressTypeId,
@@ -130,10 +129,10 @@
                                             enable:$root.enableDisable,
                                             optionsValue: 'AddressTypeId',
                                             optionsText: 'AddressType',
-                                            optionsCaption: '------Select your Address Type--------'">
+                                            optionsCaption: '-Select AddressType-'">
                                 </select>
                             </div>
-                            <div class=" col-md-4">
+                            <div class=" col-md-2">
                                 <label for="Province">Province</label>
                                 <select class="form-control" id="Province"
                                         data-bind="value:ProvinceId,
@@ -141,10 +140,10 @@
                         enable: $root.enableDisable,
                         optionsValue:'ProvinceId',
                         optionsText:'Province',
-                        optionsCaption:'-----Select your Province-----'">
+                        optionsCaption:'-Select Province-'">
                                 </select>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-2">
                                 <label for="City">City</label>
                                 <select class="form-control" id="city"
                                         data-bind="value:CityId,
@@ -152,17 +151,17 @@
                         enable:$root.enableDisable,
                         optionsValue:'CityId',
                         optionsText:'City',
-                        optionsCaption:'-----Select your City-----'">
+                        optionsCaption:'-Select City-'">
                                 </select>
                             </div>
 
-                            <div class=" col-md-4">
+                            <div class="col-md-1">
                                 <label for="Ward">Ward</label>
                                 <input type="text" class="form-control"
                                        data-bind="value:Ward,enable:$root.enableDisable"
-                                       id="ward" placeholder="Ward Number">
+                                       id="ward" placeholder="Ward">
                             </div>
-                            <div class=" col-md-4">
+                            <div class=" col-md-2">
                                 <label for="Tole">Tole</label>
                                 <input type="text" class="form-control"
                                        data-bind="value:Tole,enable:$root.enableDisable"
@@ -172,19 +171,18 @@
 
                         </div>
 
+                        <div>
+                            <button class="btn btn-success" data-bind="event: {click: $root.submit},enable: $root.submitaddress"
+                                    type="button" id="btnsubmit">
+                                <i class="fas fa-save fa-md"> Submit</i>
+                            </button>
 
+                            <button class="btn btn-primary" data-bind="event: {click: $root.Update},enable: $root.enableDisableUpd" type="button" id="btnupdate"><i class="fas fa-backspace fa-md"> Update</i></button>
+
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4" style="padding-top: 25px;">
-                    <button class="btn btn-success col-md-3" data-bind="event: {click: $root.submit},enable: $root.submitaddress"
-                            type="button" id="btnsubmit">
-                        <i class="fas fa-save fa-md"> Submit</i>
-                    </button>
-
-                    <div class=" col-md-3">
-                        <button class="btn btn-primary" data-bind="event: {click: $root.Update},enable: $root.enableDisableUpd" type="button" id="btnupdate"><i class="fas fa-backspace fa-md"> Update</i></button>
-                    </div>
-                </div>
+              
 
             </div>
 
@@ -193,14 +191,14 @@
                 @*<h2 style="text-align: center;">Module info</h2>*@
                 <div data-bind="with: MyModuleinfo">
                     <div id="ModuleGrid"></div>
-                    <div class=" col-md-4">
+                    <div class=" col-md-2">
                         <label for="Courses">Courses</label>
                         <input type="text" class="form-control"
                                data-bind="value:Courses,enable:$root.enableDisable"
                                id="Courses" placeholder="Courses">
 
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-3">
                         <label for="Class">Class</label>
                         <select class="form-control" id="Class"
                                 data-bind="value:ClassId,
@@ -212,7 +210,7 @@
                         </select>
                     </div>
 
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-3">
                         <label for="Section">Section</label>
                         <select class="form-control" id="Section"
                                 data-bind="value:SectionId,
@@ -224,7 +222,7 @@
                         </select>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-2">
                         <label for="Shift">Shift:</label>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input1" type="radio" value="Morning"
@@ -241,15 +239,15 @@
                     </div>
 
                 </div>
-                <div class="col-md-4" style="padding-top: 25px;">
-                    <button class="btn btn-success col-md-3" data-bind="event: {click: $root.submitmodule},enable: $root.enablemodule"
+                <div>
+                    <button class="btn btn-success" data-bind="event: {click: $root.submitmodule},enable: $root.enablemodule"
                             type="button" id="btnsubmit">
                         <i class="fas fa-save fa-md"> Submit</i>
                     </button>
 
-                    <div class=" col-md-3">
+                   
                         <button class="btn btn-primary" data-bind="event: {click: $root.Updatemodule},enable: $root.enableUpd" type="button" id="btnupdate"><i class="fas fa-backspace fa-md"> Update</i></button>
-                    </div>
+         
                 </div>
 
 

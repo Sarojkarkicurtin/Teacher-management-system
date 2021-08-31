@@ -802,14 +802,14 @@ function TeacherVM() {
                 } else {
                     const options = Object.assign({}, pqOptions);
                     options.colModel = [
-                        { title: "AddressType", align: "left", dataIndx: "AddressType", width: "15%" },
-                        { title: "Province", align: "center", dataIndx: "Province", width: "15%" },
-                        { title: "City", align: "center", dataIndx: "City", width: "15%" },
+                        { title: "AddressType", align: "left", dataIndx: "AddressType", width: "20%" },
+                        { title: "Province", align: "center", dataIndx: "Province", width: "20%" },
+                        { title: "City", align: "center", dataIndx: "City", width: "20%" },
 
-                        { title: "Ward", align: "Center", dataIndx: "Ward", width: "15%" },
-                        { title: "Tole", align: "Center", dataIndx: "Tole", width: "15%" },
+                        { title: "Ward", align: "Center", dataIndx: "Ward", width: "10%" },
+                        { title: "Tole", align: "Center", dataIndx: "Tole", width: "10%" },
                         {
-                            title: "Action", align: "Center", width: "30%", render: function (ui) {
+                            title: "Action", align: "Center", width: "20%", render: function (ui) {
 
                                 return `<button class="btn btn-danger" onclick="obj.delete(${ui.rowIndx});" type="button"><i class="fas fa-trash fa-lg">  Delete</i></button>  <button class="btn" style="background-color: #66CD00" onclick="obj.edit(${ui.rowIndx});" type="button"><i class="fas fa-edit fa-lg">Edit</i></button>`;
                             }

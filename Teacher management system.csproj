@@ -146,6 +146,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\pexels-teacherphoto-716276.jpeg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -300,6 +301,7 @@
     <Content Include="Scripts\libs\pqGrid\javascript-detect-element-resize\LICENSE" />
     <Content Include="Scripts\libs\pqGrid\package.json" />
     <Content Include="Scripts\libs\pqGrid\pqSelect\package.json" />
+    <Content Include="Views\Home\Teacher.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

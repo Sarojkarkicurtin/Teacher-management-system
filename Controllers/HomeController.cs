@@ -29,6 +29,12 @@ namespace Teacher_management_system.Controllers
 
             return View();
         }
+        public ActionResult Teacher()
+        {
+            
+
+            return View();
+        }
         [HttpPost]
         public ActionResult GetSalutation()
         {
@@ -124,7 +130,7 @@ namespace Teacher_management_system.Controllers
                 response.Data = finalData.Records;
                 return Json(new { Success = true, response.Data, CurrentPage = pq_curpage, TotalRecords = finalData.TotalCount }, JsonRequestBehavior.AllowGet);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
