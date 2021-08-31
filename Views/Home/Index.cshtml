@@ -3,23 +3,23 @@
 
 
 <div class="" id="tabs" style="background-color:salmon; padding-top: 0px; margin-top: 0px;">
-    <div class=" col-md-12" style="padding-left: 700px;">
-        <button class="btn btn-info col-md-3" data-bind="event: {click: $root.Add},enable: enableDisableAdd"
+    <div style="float:right">
+        <button class="btn btn-info" data-bind="event: {click: $root.Add},enable: enableDisableAdd"
                 type="button" id="btnAdd">
             <i class="fas fa-plus fa-md"> New</i>
         </button>
-        <button class="btn btn-success col-md-3" data-bind="event: {click: $root.Save},enable: enableDisableSave"
+        <button class="btn btn-success" data-bind="event: {click: $root.Save},enable: enableDisableSave"
                 type="button" id="btnSave">
             <i class="fas fa-save fa-md"> Save</i>
         </button>
-        <button class="btn btn-danger col-md-3" data-bind="event: {click: $root.Clear},enable: enableDisableClear"
+        <button class="btn btn-danger" data-bind="event: {click: $root.Clear},enable: enableDisableClear"
                 type="button" id="btnClear">
             <i class="fas fa-backspace fa-md"> Clear</i>
         </button>
 
-        <button class="btn btn-primary col-md-3" data-bind="event: {click: $root.Updatealldata},enable:allUpdate"
+        <button class="btn btn-primary" data-bind="event: {click: $root.Updatealldata},enable:allUpdate"
                 type="button" id="btnupdate">
-            <i class="fas fa-backspace fa-md"> Update </i>
+            <i class="far fa-pencil"> Update </i>
         </button>
 
     </div>
@@ -119,7 +119,7 @@
                 <div class="container">
                     <div>
 
-                       <div class="form-row" style="padding-top:50px" data-bind="with: MyAddress">
+                       <div class="form-row" style="padding-top:10px" data-bind="with: MyAddress">
 
                             <div class=" col-md-3">
                                 <label for="AddressType">Address Type</label>
@@ -171,13 +171,13 @@
 
                         </div>
 
-                        <div>
+                        <div style="padding-top:25px">
                             <button class="btn btn-success" data-bind="event: {click: $root.submit},enable: $root.submitaddress"
                                     type="button" id="btnsubmit">
                                 <i class="fas fa-save fa-md"> Submit</i>
                             </button>
 
-                            <button class="btn btn-primary" data-bind="event: {click: $root.Update},enable: $root.enableDisableUpd" type="button" id="btnupdate"><i class="fas fa-backspace fa-md"> Update</i></button>
+                            <button class="btn btn-primary" data-bind="event: {click: $root.Update},enable: $root.enableDisableUpd" type="button" id="btnupdate"><i class="far fa-pencil">Update</i></button>
 
                         </div>
                     </div>
@@ -187,10 +187,10 @@
             </div>
 
             <div id="subtabs-3">
-
+                <div id="ModuleGrid"></div>
                 @*<h2 style="text-align: center;">Module info</h2>*@
-                <div data-bind="with: MyModuleinfo">
-                    <div id="ModuleGrid"></div>
+                <div style="padding-top:10px" data-bind="with: MyModuleinfo">
+
                     <div class=" col-md-2">
                         <label for="Courses">Courses</label>
                         <input type="text" class="form-control"
@@ -239,15 +239,15 @@
                     </div>
 
                 </div>
-                <div>
+                <div style="padding-top:25px">
                     <button class="btn btn-success" data-bind="event: {click: $root.submitmodule},enable: $root.enablemodule"
                             type="button" id="btnsubmit">
                         <i class="fas fa-save fa-md"> Submit</i>
                     </button>
 
-                   
-                        <button class="btn btn-primary" data-bind="event: {click: $root.Updatemodule},enable: $root.enableUpd" type="button" id="btnupdate"><i class="fas fa-backspace fa-md"> Update</i></button>
-         
+
+                    <button class="btn btn-primary" data-bind="event: {click: $root.Updatemodule},enable: $root.enableUpd" type="button" id="btnupdate"><i class="far fa-pencil"> Update</i></button>
+
                 </div>
 
 
