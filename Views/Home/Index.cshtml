@@ -1,0 +1,296 @@
+﻿
+
+
+
+<div class="" id="tabs" style="background-color:salmon; padding-top: 0px; margin-top: 0px;">
+    <div class=" col-md-12" style="padding-left: 700px;">
+        <button class="btn btn-info col-md-3" data-bind="event: {click: $root.Add},enable: enableDisableAdd"
+                type="button" id="btnAdd">
+            <i class="fas fa-plus fa-md"> New</i>
+        </button>
+        <button class="btn btn-success col-md-3" data-bind="event: {click: $root.Save},enable: enableDisableSave"
+                type="button" id="btnSave">
+            <i class="fas fa-save fa-md"> Save</i>
+        </button>
+        <button class="btn btn-danger col-md-3" data-bind="event: {click: $root.Clear},enable: enableDisableClear"
+                type="button" id="btnClear">
+            <i class="fas fa-backspace fa-md"> Clear</i>
+        </button>
+
+        <button class="btn btn-primary col-md-3" data-bind="event: {click: $root.Updatealldata},enable:allUpdate"
+                type="button" id="btnupdate">
+            <i class="fas fa-backspace fa-md"> Update </i>
+        </button>
+
+    </div>
+    <ul>
+
+        <li><a href="#tabs-1">Teacher info</a></li>
+        <li><a href="#tabs-4">Detail list</a></li>
+        <li><a href="#tabs-5">Remote</a></li>
+
+    </ul>
+
+    <div id="tabs-1">
+        <div class="container" data-bind="with: MyModel">
+            <h2 style="text-align: center;">Teacher Information Form</h2>
+            <div class="container">
+                <div class="col-md-4">
+                    <label for="Salutation">Salutation</label>
+                    <select class="form-control" id="Salutation" data-bind="
+                            value:SalutationId,
+                            options:$root.Salutationlist,
+                            event:{ change:$root.onChangeOfSalutation},
+                            enable:$root.enableDisable,
+                            optionsValue: 'SalutationId',
+                            optionsText:'SalutationName',
+                            optionsCaption: '---SELECT salutation---' ">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="FirstName">First Name</label>
+                    <input type="text" data-bind="value:FirstName,enable:$root.enableDisable"
+                           class="form-control" id="inputFirstName" placeholder="First Name">
+
+                </div>
+
+                <div class="col-md-4">
+                    <label for="LastName">Last Name</label>
+                    <input type="text" data-bind="value:LastName,enable:$root.enableDisable"
+                           class="form-control" id="inputLastName" placeholder="Last Name">
+
+                </div>
+                <div class="col-md-4">
+                    <label for="Email">Email</label>
+                    <input type="email" data-bind="value:Email,enable:$root.enableDisable"
+                           class="form-control" id="inputEmail" placeholder="Email">
+
+                </div>
+                <div class="col-md-4">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" data-bind="value:Phone,enable:$root.enableDisable"
+                           class="form-control" id="inputPhone" placeholder="Phone">
+                </div>
+                <div class="col-md-4">
+                    <label for="Age">Age</label>
+                    <input type="text" data-bind="value:Age,enable:$root.enableDisable"
+                           class="form-control" id="inputAge" placeholder="Your Age">
+                </div>
+                <div class="col-md-6">
+                    <label for="Gender">Gender:   </label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input1" type="radio" value="Male"
+                               data-bind="checked: SelectedGender,enable:$root.enableDisableGender"
+                               name="inlineRadioOptions" id="inlineradio1">
+                        <label class="form-check-label" for="inlineRadio1">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input1" type="radio" value="Female"
+                               data-bind="checked: SelectedGender,enable:$root.enableDisableGender"
+                               name="inlineRadioOptions" id="inlineradio2">
+                        <label class="form-check-label" for="inlineRadio2">Female</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="Nationality">Nationality</label>
+                    <select class="form-control" id="nationality" data-bind="value: nationalId,
+                            options: $root.NationalList,
+                            enable: $root.enableDisable,
+                            optionsValue: 'nationalId',
+                            optionsText:'Nationality',
+                            optionsCaption:'-----select your Nationality-----'">
+                    </select>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container" id="subtabs" style="background-color: antiquewhite;  margin-top: 0px;">
+            <ul>
+                <li><a href="#subtabs-2">Address </a></li>
+                <li><a href="#subtabs-3">Module info</a></li>
+
+            </ul>
+            <div id="subtabs-2">
+
+                <div id="dataGrid"></div>
+                @*<h2 style="text-align: center;">Address Form</h2>*@
+                <div class="container">
+                    <div>
+
+
+                        <div class="form-row" style="padding-top:50px" data-bind="with: MyAddress">
+
+                            <div class=" col-md-4">
+                                <label for="AddressType">Address Type</label>
+
+                                <select class="form-control" data-bind="value: AddressTypeId,
+                                            options: $root.AddressTypeList,
+                                            enable:$root.enableDisable,
+                                            optionsValue: 'AddressTypeId',
+                                            optionsText: 'AddressType',
+                                            optionsCaption: '------Select your Address Type--------'">
+                                </select>
+                            </div>
+                            <div class=" col-md-4">
+                                <label for="Province">Province</label>
+                                <select class="form-control" id="Province"
+                                        data-bind="value:ProvinceId,
+                        options: $root.provincelist,
+                        enable: $root.enableDisable,
+                        optionsValue:'ProvinceId',
+                        optionsText:'Province',
+                        optionsCaption:'-----Select your Province-----'">
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="City">City</label>
+                                <select class="form-control" id="city"
+                                        data-bind="value:CityId,
+                        options:$root.CityList,
+                        enable:$root.enableDisable,
+                        optionsValue:'CityId',
+                        optionsText:'City',
+                        optionsCaption:'-----Select your City-----'">
+                                </select>
+                            </div>
+
+                            <div class=" col-md-4">
+                                <label for="Ward">Ward</label>
+                                <input type="text" class="form-control"
+                                       data-bind="value:Ward,enable:$root.enableDisable"
+                                       id="ward" placeholder="Ward Number">
+                            </div>
+                            <div class=" col-md-4">
+                                <label for="Tole">Tole</label>
+                                <input type="text" class="form-control"
+                                       data-bind="value:Tole,enable:$root.enableDisable"
+                                       id="tole" placeholder="Tole">
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-top: 25px;">
+                    <button class="btn btn-success col-md-3" data-bind="event: {click: $root.submit},enable: $root.submitaddress"
+                            type="button" id="btnsubmit">
+                        <i class="fas fa-save fa-md"> Submit</i>
+                    </button>
+
+                    <div class=" col-md-3">
+                        <button class="btn btn-primary" data-bind="event: {click: $root.Update},enable: $root.enableDisableUpd" type="button" id="btnupdate"><i class="fas fa-backspace fa-md"> Update</i></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="subtabs-3">
+
+                @*<h2 style="text-align: center;">Module info</h2>*@
+                <div data-bind="with: MyModuleinfo">
+                    <div id="ModuleGrid"></div>
+                    <div class=" col-md-4">
+                        <label for="Courses">Courses</label>
+                        <input type="text" class="form-control"
+                               data-bind="value:Courses,enable:$root.enableDisable"
+                               id="Courses" placeholder="Courses">
+
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="Class">Class</label>
+                        <select class="form-control" id="Class"
+                                data-bind="value:ClassId,
+                        options:$root.classList,
+                        enable:$root.enableDisable,
+                        optionsValue:'ClassId',
+                        optionsText:'Class',
+                        optionsCaption:'-----Select your Class-----'">
+                        </select>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="Section">Section</label>
+                        <select class="form-control" id="Section"
+                                data-bind="value:SectionId,
+                        options:$root.sectionList,
+                        enable:$root.enableDisable,
+                        optionsValue:'SectionId',
+                        optionsText:'Section',
+                        optionsCaption:'-----Select your section-----'">
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="Shift">Shift:</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input1" type="radio" value="Morning"
+                                   data-bind="checked: SelectedShift,enable:$root.enableDisableShift"
+                                   name="inlineRadioOptions" id="inlineradio1">
+                            <label class="form-check-label" for="inlineRadio1">Morning</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input1" type="radio" value="Day"
+                                   data-bind="checked: SelectedShift,enable:$root.enableDisableShift"
+                                   name="inlineRadioOptions" id="inlineradio2">
+                            <label class="form-check-label" for="inlineRadio2">Day</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4" style="padding-top: 25px;">
+                    <button class="btn btn-success col-md-3" data-bind="event: {click: $root.submitmodule},enable: $root.enablemodule"
+                            type="button" id="btnsubmit">
+                        <i class="fas fa-save fa-md"> Submit</i>
+                    </button>
+
+                    <div class=" col-md-3">
+                        <button class="btn btn-primary" data-bind="event: {click: $root.Updatemodule},enable: $root.enableUpd" type="button" id="btnupdate"><i class="fas fa-backspace fa-md"> Update</i></button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <div id="tabs-4" data-bind="with: MyModel">
+        <h2 style="text-align: center;">Detail list</h2>
+        <div style="background-color: #1ada6a; ">
+            <div id="demogrid"></div>
+        </div>
+    </div>
+    <div id="tabs-5" >
+        <h2 style="text-align: center;">Remote</h2>
+        <div style="background-color: #1ada6a; ">
+            <div id="RemoteGrid"></div>
+        </div>
+    </div>
+
+
+
+</div>
+
+    <script src="~/Scripts/teacher.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
